@@ -32,6 +32,7 @@ if (Get-PSDrive -Name $DriveLetter -ErrorAction SilentlyContinue) {
 # Triggers a secure Windows login prompt. This allows the script to use a 
 # username and password that differ from the current laptop session.
 # ==============================================================================
+Write-Host "Please provide network credentials to map $NetworkPath." -ForegroundColor Cyan     #added a prompt for the user to understand why they're getting asked for credentials. 
 $cred = Get-Credential
 
 
@@ -45,7 +46,7 @@ try {
         -Root $NetworkPath `
         -Credential $cred `
         -Persist `
-        -Scope Global
+        -Scope Global        #May not need global scope...
     Write-Host "Successfully mapped drive $DriveLetter to $NetworkPath." -ForgroundColor Green
 } catch {
     Write-Host "Failed to map drive $DriveLetter to $NetworkPath." -ForgroundColor Red
