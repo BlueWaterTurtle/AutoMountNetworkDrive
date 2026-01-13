@@ -4,8 +4,8 @@
 # SECTION 1: CONFIGURATION VARIABLES
 # Sets the core parameters for the drive mapping.
 # ==============================================================================
-$DriveLetter = "Z"                        # The letter assigned to the mapped drive
-$NetworkPath = "\\ServerName\SharedFolder" # The target network share path (UNC path)
+$DriveLetter = "T"                        # The letter assigned to the mapped drive
+$NetworkPath = "\\172.16.30.18\Carlton Office\Technical\" # The target network share path (UNC path)
 
 
 # ==============================================================================
